@@ -21,25 +21,21 @@ public class TextBoxTest {
     void successFillTest() {
         open("/text-box");
         $(".main-header").shouldHave(text("Text Box"));
-        $("#userName").setValue("Ilia");
-        $("#userEmail").setValue("box@mail.com");
-        $("#currentAddress").setValue("Adress 1, Country 1");
-        $("#permanentAddress").setValue("Adress 2, Country 2");
+
+        $("#userName").setValue("Alex");
+        $("#userEmail").setValue("alex@company.com");
+        $("#currentAddress").setValue("Some address 1");
+        $("#permanentAddress").setValue("Other address 2");
         $("#submit").click();
 
-        $("#output").shouldHave(text("Ilia"), text("box@mail.com"),
-                text("Adress 1, Country 1"), text("Adress 2, Country 2"));
+        $("#output").shouldHave(text("Alex"), text("alex@company.com"),
+                text("Some address 1"), text("Other address 2"));
 
-        //варианты использования
-        $("#name").shouldHave(text("Ilia"));
-        $ ("#currentAddress").shouldHave(text("Adress 1, Country 1")); //wrong
-        $("#currentAddress",1).shouldHave(text("Adress 1, Country 1"));
-        $("#output").$("#currentAddress").shouldHave(text("Adress 1, Country 1"));
-        $("#output #currentAddress").shouldHave(text("Adress 1, Country 1"));
-
-        $("#output").shouldHave(text("Ilia"), text("box@mail.com"),
-                text("Adress 1, Country 1"), text("Adress 2, Country 2"));
-
-      }
-
+       // $("#name").shouldHave(text("Alex"));
+        //$("#currentAddress").shouldHave(text("Some address 1")); // wrong
+        //$("#currentAddress", 1).shouldHave(text("Some address 1"));
+       // $("#output").$("#currentAddress").shouldHave(text("Some address 1"));
+        //$("#output #currentAddress").shouldHave(text("Some address 1"));
+    }
 }
+
