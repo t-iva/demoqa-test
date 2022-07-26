@@ -1,0 +1,1 @@
+not_from_idea_file.txt
