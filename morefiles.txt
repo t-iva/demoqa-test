@@ -1,1 +1,3 @@
 morefiles.txt
+
+some new text
